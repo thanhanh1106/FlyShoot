@@ -7,9 +7,9 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] float timeMove = 1f;
     [SerializeField] float heath = 5f;
-    float currentHeath;
-    float scoreBonus = 1f;
+    [SerializeField] float scoreBonus = 1f;
 
+    float currentHeath;
     bool isDie => currentHeath <= 0;
 
     private void Start()
@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     {
         if (isDie)
         {
+            GameManager.Instance.AddScore(scoreBonus);
             gameObject.SetActive(false);
         }
     }

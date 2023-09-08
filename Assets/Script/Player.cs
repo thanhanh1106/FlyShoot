@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 70f;
     [SerializeField] Transform shootPoint;
+    [SerializeField] float RateOfFireTime = 0.1f;
     private void Start()
     {
         Cursor.visible = false;
@@ -38,7 +39,7 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(RateOfFireTime);
             GameObject bullet = BulletPool.Instance.GetBullet();
             bullet.transform.position = shootPoint.position;
         }

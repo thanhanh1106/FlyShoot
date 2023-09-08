@@ -44,7 +44,6 @@ public class EnemiesController : Singleton<EnemiesController>
         {
             yield return new WaitForSeconds(timeChange);
             currentMatrix++;
-            Debug.Log(currentMatrix);
             Arrage(enemyMatrixs[currentMatrix]);
         }
         yield return new WaitForSeconds(1f);

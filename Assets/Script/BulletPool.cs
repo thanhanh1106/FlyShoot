@@ -5,11 +5,11 @@ using UnityEngine;
 public class BulletPool : Singleton<BulletPool>
 {
     [SerializeField] GameObject bulletPrefab;
-    public int poolSize = 30;
+    public int poolSize = 15;
 
     private List<GameObject> bullets = new List<GameObject>();
 
-    private void Awake()
+    protected override void Awake()
     {
         MakeSingleton(false);
         // Khởi tạo pool
